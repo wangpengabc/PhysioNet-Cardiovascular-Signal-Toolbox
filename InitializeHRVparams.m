@@ -20,7 +20,7 @@ function HRVparams = InitializeHRVparams(project_name)
 %       13. Peak Detection Settings
 %       14. Entropy  and Multiscale Entropy - MSE - Settings
 %       15. Detrended Fluctuation Analysis - DFA - Settings
-%       16. Poincarï¿½ plot - Settings
+%       16. Poincarï¿? plot - Settings
 %       17. Heart Rate Turbulence (HRT) - Settings
 %       18. Output Settings 
 %       19. Time of Process and Filename to Save Data
@@ -68,6 +68,20 @@ switch project_name
         HRVparams.writedata = '';          % (Optional) Specify name for data output folder
         HRVparams.datatype = '';           % (Optional) Spacify Data type of input
         HRVparams.ext = '';                % (Optional) Spacify file extension of input (e.g., 'mat','qrs')
+    
+    case 'ECG_Slice'
+        HRVparams.Fs = 1000;               
+        HRVparams.readdata = '';           
+        HRVparams.writedata = '';         
+        HRVparams.datatype = '';           
+        HRVparams.ext = '';
+        
+    case 'ECG_PPG_Anno_MIMIC'
+        HRVparams.Fs = 125;               
+        HRVparams.readdata = '';           
+        HRVparams.writedata = '';         
+        HRVparams.datatype = '';           
+        HRVparams.ext = '';
         
     % Existing demo projects
     case 'MVanalysis'                      % Morphological variability analysis ECG
@@ -304,7 +318,7 @@ HRVparams.DFA.minBoxSize = 4 ;      % Default: 4, Smallest box width
 HRVparams.DFA.maxBoxSize = [];      % Largest box width (default in DFA code: signal length/4) 
 HRVparams.DFA.midBoxSize = 16;      % Medium time scale box width (default in DFA code: 16)
 
-%% 16. Poincarï¿½ plot
+%% 16. Poincarï¿? plot
 
 HRVparams.poincare.on = 1;     % Default: 1, Poincare Analysis 1=On or 0=Off
 

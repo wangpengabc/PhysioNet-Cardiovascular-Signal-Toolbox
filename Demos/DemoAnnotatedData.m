@@ -69,6 +69,7 @@ for i_patient = 1:numsub
         tNN = [];
         NN = [];
         [samples,annotations] = read_ann(thisPatient{1},HRVparams.ext);
+        
         rr = diff(samples)./HRVparams.Fs; 
         t = cumsum(rr);
         

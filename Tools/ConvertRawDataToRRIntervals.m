@@ -71,27 +71,27 @@ wqrs_ann = wqrsm_fast(ECG_RawData*GainQrsDetect,HRVparams.Fs);
 rr = diff(jqrs_ann./HRVparams.Fs);
 t = jqrs_ann(2:end)./HRVparams.Fs;
 
-%%  Export Annotations as ATR files
-
-% Create a Folder for Annotations
-WriteAnnotationFolder = [HRVparams.writedata filesep 'Annotation'];
-if ~exist(WriteAnnotationFolder, 'dir')
-   mkdir(WriteAnnotationFolder)
-   fprintf('Creating a new folder: "Annotation", folder is located in %s \n',[pwd filesep WriteAnnotationFolder]);
-end
-addpath(WriteAnnotationFolder)
-
-AnnFile = strcat(WriteAnnotationFolder, filesep, subjectID);
-% Header File
-write_hea(AnnFile, HRVparams.Fs, length(ECG_RawData), 'jqrs', 1, 0,'mV')
-% ECG QRS
-write_ann(AnnFile, HRVparams,'jqrs',jqrs_ann);
-write_ann(AnnFile, HRVparams,'sqrs',sqrs_ann);
-write_ann(AnnFile, HRVparams,'wqrs',wqrs_ann);
-fakeAnnType = repmat('S',[length(SQIjs), 1]);
-write_ann(AnnFile, HRVparams,'sqijs', StartSQIwindows_js, fakeAnnType ,round(SQIjs*100)); 
-fakeAnnType = repmat('S',[length(SQIjw), 1]);
-write_ann(AnnFile, HRVparams,'sqijw', StartSQIwindows_jw,fakeAnnType ,round(SQIjw*100)); 
+% %%  Export Annotations as ATR files
+% 
+% % Create a Folder for Annotations
+% WriteAnnotationFolder = [HRVparams.writedata filesep 'Annotation'];
+% if ~exist(WriteAnnotationFolder, 'dir')
+%    mkdir(WriteAnnotationFolder)
+%    fprintf('Creating a new folder: "Annotation", folder is located in %s \n',[pwd filesep WriteAnnotationFolder]);
+% end
+% addpath(WriteAnnotationFolder)
+% 
+% AnnFile = strcat(WriteAnnotationFolder, filesep, subjectID);
+% % Header File
+% write_hea(AnnFile, HRVparams.Fs, length(ECG_RawData), 'jqrs', 1, 0,'mV')
+% % ECG QRS
+% write_ann(AnnFile, HRVparams,'jqrs',jqrs_ann);
+% write_ann(AnnFile, HRVparams,'sqrs',sqrs_ann);
+% write_ann(AnnFile, HRVparams,'wqrs',wqrs_ann);
+% fakeAnnType = repmat('S',[length(SQIjs), 1]);
+% write_ann(AnnFile, HRVparams,'sqijs', StartSQIwindows_js, fakeAnnType ,round(SQIjs*100)); 
+% fakeAnnType = repmat('S',[length(SQIjw), 1]);
+% write_ann(AnnFile, HRVparams,'sqijw', StartSQIwindows_jw,fakeAnnType ,round(SQIjw*100)); 
 
 
 

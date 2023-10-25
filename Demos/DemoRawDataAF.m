@@ -40,7 +40,7 @@ HRVparams.HRT.on = 0; % HRT analysis off for this demo
 
 
 [subjectIDs,filesTBA] = GenerateListOfFilesTBA(HRVparams.ext,...
-                                                    HRVparams.readdata,0);
+                                                    HRVparams.readdata,0);                                       
 idx = find(strcmp(subjectIDs,'TestAFdata'));
 i_patient = idx;
 
