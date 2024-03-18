@@ -83,6 +83,13 @@ switch project_name
         HRVparams.datatype = '';           
         HRVparams.ext = '';
         
+    case 'ECG_PPG_Anno_BIDMC'
+        HRVparams.Fs = 125;               
+        HRVparams.readdata = '';           
+        HRVparams.writedata = '';         
+        HRVparams.datatype = '';           
+        HRVparams.ext = '';
+        
     % Existing demo projects
     case 'MVanalysis'                      % Morphological variability analysis ECG
         HRVparams.Fs = 1000;               

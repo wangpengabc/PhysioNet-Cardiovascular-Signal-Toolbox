@@ -53,7 +53,8 @@ for i=1:disease_name_list_len
             subject_data_path_struct_size = size(subject_data_path_struct);
             subject_data_path_struct_len = subject_data_path_struct_size(1);
 
-             % initialize HRVparams
+%             initialize HRVparams
+%             F:\生理信号数据集\mimic-iii\病症筛选结果\tools\PhysioNet-Cardiovascular-Signal-Toolbox\InitializeHRVparams.m 在增加新的数据集时，需要在该文件增加数据集的一些参数
             HRVparams = InitializeHRVparams('ECG_PPG_Anno_MIMIC'); % include the project name
             HRVparams.poincare.on = 0; % Poincare analysis off for this demo
             HRVparams.DFA.on = 0; % DFA analysis off for this demo

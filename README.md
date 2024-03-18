@@ -1,3 +1,6 @@
+F:\生理信号数据集\mimic-iii\病症筛选结果\tools\PhysioNet-Cardiovascular-Signal-Toolbox\InitializeHRVparams.m 在增加新的数据集时，需要在该文件增加数据集的一些参数
+
+
 ![alt text](https://zenodo.org/badge/DOI/10.5281/zenodo.1243112.svg)
 
 # PhysioNet Cardiovascular Signal Toolbox
